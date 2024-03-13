@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch and Display JSON</title>
+</head>
+<body>
+
+    <h1>JSON Data</h1>
+    <div id="output"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const apiUrl = 'https://jsonplaceholder.typicode.com/todos/1';
+
+            // Fetch JSON data
+            fetch(apiUrl)
+                .then(response => {
+                    // the response is the HTTP response at this step. what do you do?
+                    return response.json();
+                    
+                })
+                .then(data => {
+                    // display JSON data in the browser
+                    console.log(data);
+                })
+                    
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>
